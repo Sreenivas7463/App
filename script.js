@@ -4,10 +4,33 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.querySelector('.search-input');
   const exploreButton = document.querySelector('.cta-button');
   
+  // Handle smooth scrolling and remove hash
+  function smoothScroll(e, element) {
+    e.preventDefault();
+    const href = element.getAttribute('href');
+    const targetId = href.replace('#', '');
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+      history.pushState({}, '', window.location.pathname);
+    }
+  }
+
   // Handle Explore Courses button click
-  exploreButton.addEventListener('click', function() {
+  exploreButton.addEventListener('click', function(e) {
     navLinks.forEach(link => link.classList.remove('active'));
-    document.querySelector('.nav-links a[href="#courses"]').classList.add('active');
+    const coursesLink = document.querySelector('.nav-links a[href="#courses"]');
+    coursesLink.classList.add('active');
+    smoothScroll(e, coursesLink);
+  });
+
+  // Handle navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      smoothScroll(e, this);
+    });
   });
   
   // Course suggestions data
