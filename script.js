@@ -4,6 +4,25 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-links a');
   const searchInput = document.querySelector('.search-input');
   const exploreButton = document.querySelector('.cta-button');
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  
+  // Show/hide scroll to top button
+  window.addEventListener('scroll', () => {
+    const halfPageHeight = document.documentElement.scrollHeight / 2;
+    if (window.scrollY > halfPageHeight) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top when button is clicked
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
