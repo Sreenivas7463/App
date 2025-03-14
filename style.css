@@ -38,6 +38,19 @@ nav {
   margin-left: 2rem;
   text-decoration: none;
   color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: #f0f9ff;
+  color: #2563eb;
+}
+
+.nav-links a.active {
+  background: #2563eb;
+  color: white;
 }
 
 .hero {
