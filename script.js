@@ -1,8 +1,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
   const navLinks = document.querySelectorAll('.nav-links a');
   const searchInput = document.querySelector('.search-input');
   const exploreButton = document.querySelector('.cta-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
   
   // Handle smooth scrolling and remove hash
   function smoothScroll(e, element) {
