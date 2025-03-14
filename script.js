@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.querySelector('.search-input');
   const exploreButton = document.querySelector('.cta-button');
   const scrollToTopBtn = document.getElementById('scrollToTop');
-  const homeTop = document.getElementById('home');
+
   
   // Show/hide scroll to top button
   window.addEventListener('scroll', () => {
@@ -38,13 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Scroll to top when button is clicked
-  homeTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
