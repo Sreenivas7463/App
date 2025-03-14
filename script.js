@@ -2,6 +2,19 @@
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('header');
   const navLinks = document.querySelectorAll('.nav-links a');
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  });
   const searchInput = document.querySelector('.search-input');
   const exploreButton = document.querySelector('.cta-button');
   const scrollToTopBtn = document.getElementById('scrollToTop');

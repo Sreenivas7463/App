@@ -376,12 +376,48 @@ footer {
   transform: translateY(-3px);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #2563eb;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
   }
   
+  .hamburger {
+    display: flex;
+  }
+
   .nav-links {
     display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
   }
 }
