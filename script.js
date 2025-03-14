@@ -2,6 +2,13 @@
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-links a');
   const searchInput = document.querySelector('.search-input');
+  const exploreButton = document.querySelector('.cta-button');
+  
+  // Handle Explore Courses button click
+  exploreButton.addEventListener('click', function() {
+    navLinks.forEach(link => link.classList.remove('active'));
+    document.querySelector('.nav-links a[href="#courses"]').classList.add('active');
+  });
   
   // Course suggestions data
   const courses = [
