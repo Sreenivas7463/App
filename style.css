@@ -127,6 +127,7 @@ nav {
   cursor: pointer;
   transition: background 0.2s;
   text-align: left;
+  color: #333;
 }
 
 .suggestion-item:hover {
